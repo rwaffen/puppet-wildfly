@@ -6,7 +6,7 @@ Puppet::Type.type(:wildfly_cli_batchfile).provide :http_api, :parent => Puppet::
   def exec_command
     debug "Running: run-batch --file=#{@resource[:command]}"
     # cli.exec("run-batch --file=#{@resource[:command]}")
-    cli.exec("run-batch")
+    cli.exec("run-batch --file=test.cmd")
   end
 
   def should_execute?
