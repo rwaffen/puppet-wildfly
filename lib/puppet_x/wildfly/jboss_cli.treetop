@@ -7,7 +7,8 @@ grammar JBossCLI
   end
 
   rule batchfile
-    '--file=' ^(/[^/ ]*)+/?$
+    #'--file=' ^(/[^/ ]*)+/?$
+    (identifier '=' identifier)
   end
 
   rule path
