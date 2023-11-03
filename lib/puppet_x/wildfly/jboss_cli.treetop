@@ -4,7 +4,7 @@ grammar JBossCLI
 
   rule command
     #(path? ':'? operation_name params? headers? / operation_name batchfile)
-    operation_name key_value_rocket
+    'run-batch --file=/home/rwaffen/apps_jboss/test/jboss-cli.cmd'
   end
 
   rule batchfile
