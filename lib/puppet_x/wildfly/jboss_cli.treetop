@@ -7,7 +7,7 @@ grammar JBossCLI
   end
 
   rule batchfile
-    'run-batch --file=*'
+    '--file=*'
   end
 
   rule path
