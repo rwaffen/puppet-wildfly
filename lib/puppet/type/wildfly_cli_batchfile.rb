@@ -1,24 +1,24 @@
 require 'puppet/parameter/boolean'
 
-Puppet::Type.newtype(:wildfly_cli) do
-  desc 'Executes JBoss-CLI commmands'
+Puppet::Type.newtype(:wildfly_cli_batchfile) do
+  desc 'Executes a JBoss-CLI batchfile'
 
   @isomorphic = false
 
-  newparam(:command, :namevar => true) do
-    desc 'The actual commmand to execute'
+  newparam(:path, :namevar => true) do
+    desc 'The path to the batchfile to execute'
   end
 
   newparam(:unless) do
-    desc 'If this parameter is set, then CLI command will only run if this command returns true'
+    desc 'If this parameter is set, then CLI batchfile will only run if this batchfile returns true'
   end
 
   newparam(:onlyif) do
-    desc 'If this parameter is set, then CLI command will only run if this command returns false'
+    desc 'If this parameter is set, then CLI batchfile will only run if this batchfile returns false'
   end
 
   newparam(:refreshonly, :boolean => true, :parent => Puppet::Parameter::Boolean) do
-    desc 'If this parameter is set, then CLI command will only run if the resource was notified'
+    desc 'If this parameter is set, then CLI batchfile will only run if the resource was notified'
     defaultto false
   end
 
@@ -46,7 +46,7 @@ Puppet::Type.newtype(:wildfly_cli) do
   end
 
   newproperty(:executed) do
-    desc 'Whether the command should be executed or not'
+    desc 'Whether the batchfile should be executed or not'
 
     defaultto true
 
