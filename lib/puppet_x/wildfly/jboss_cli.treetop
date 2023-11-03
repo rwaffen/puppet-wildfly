@@ -3,11 +3,10 @@
 grammar JBossCLI
 
   rule command
-    path? ':'? operation_name batchfile? params? headers?
+    (path? ':'? operation_name params? headers? / path? ':'? operation_name batchfile)
   end
 
   rule batchfile
-    #'--file=' ^(/[^/ ]*)+/?$
     (identifier '=' identifier)
   end
 
