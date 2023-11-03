@@ -4,8 +4,8 @@ Puppet::Type.type(:wildfly_cli_batchfile).provide :http_api, :parent => Puppet::
   desc 'Uses JBoss HTTP API to execute a JBoss-CLI batchfile'
 
   def exec_command
-    debug "Running: #{@resource[:path]}"
-    cli.exec(@resource[:path])
+    debug "Running: run-batch --file=#{@resource[:path]}"
+    cli.exec("run-batch --file=#{@resource[:path]}")
   end
 
   def should_execute?
