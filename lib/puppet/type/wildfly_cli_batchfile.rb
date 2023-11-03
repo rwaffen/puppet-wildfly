@@ -5,7 +5,7 @@ Puppet::Type.newtype(:wildfly_cli_batchfile) do
 
   @isomorphic = false
 
-  newparam(:command, :namevar => true) do
+  newparam(:batchfile, :namevar => true) do
     desc 'The path to the batchfile to execute'
   end
 
