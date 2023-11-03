@@ -4,11 +4,11 @@ grammar JBossCLI
 
   rule command
     #(path? ':'? operation_name params? headers? / operation_name batchfile)
-    operation_name batchfile
+    operation_name '--file='batchfile
   end
 
   rule batchfile
-    '--file=' [a-zA-Z0-9_\.\-:/]+
+    identifier
   end
 
   rule path
